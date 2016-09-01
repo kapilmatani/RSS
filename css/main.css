@@ -1,0 +1,47 @@
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+.feedContainer{
+  padding:0px 20px;
+}
+
+.feedItem{
+  margin: 20px;
+  padding: 10px;
+  min-width: 400px;
+}
+
+.timespent{
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+}
+.timebomb{
+  line-height: 20px;
+  margin-top: 11px;
+  margin-right: 11px;
+}
+
+.feedimg{
+  float: left;
+  height: 160px;
+}
+
+.feedcont{
+  height: 160px;
+}
+
+.feeddetail{
+  display: inline-block;
+  margin-left: 20px;  
+}
+
+.fa{
+  color: black;
+}
+
+.remove_btn{
+  float: right;
+}

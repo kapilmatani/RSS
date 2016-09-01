@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<title>RSS Feed Viewer</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- Jquery -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+	<!-- Angular Files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-sanitize.js"></script>	
+	
+	<!-- XML to JSON -->
+	<script src="./js/xml2json.min.js"></script>
+	<script src="./js/angular-xml.min.js"></script>
+	
+	<!-- HTML to JSON -->
+	<script src="./js/htmlparser.js"></script>
+	<script src="./js/html2json.js"></script>
+	
+	<!-- Mainapp -->
+	<script src="./js/redit.js"></script>	
+
+
+</head>
+<body ng-app="reditApp" ng-cloak ng-controller="mainCtrl">
+	<nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo center">RSS Feed Viewer</a>
+	      <ul id="nav-mobile" class="right">
+	        <li class="timebomb">Cureent Time : <span class="aajkasamay"></span>
+	        	<br>Time Spent : <span class="minute minuteactive" >0</span> : <span class="second secondactive">0</span></li>
+	      </ul>
+	    </div>
+	</nav>
+<div class="feedContainer">
+	<h3 style="text-transform: capitalize;">{{feed.title}}<span style="font-size: 14px"> (Updated : {{feed.updated}})</span></h3>
+	<div class="card hoverable feedItem" ng-repeat="i in entry">
+	<a class="remove_btn" ng-click="remove($index)">Remove</a>
+		<div class="feedbox">
+		<a target="_blank" href={{headLink[$index]}}>{{i.title}}</a>
+		</div><br>
+		<div class="feedcont">
+		<img class="feedimg" src={{imgLink[$index]}}>
+		<div class="feeddetail">
+		Author : <a href=i.author.uri>{{i.author.name}}</a><br>
+		Category : {{i.category._label}}<br>
+		<a href={{i.link._href}}>View</a> at Reddit
+		</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+

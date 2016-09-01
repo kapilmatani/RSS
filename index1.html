@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quick Sort</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>	
+  <script src="./js/quicksortApp.js"></script>	
+</head>
+<body ng-app="quicksortApp" ng-cloak ng-controller="mainCtrl">
+<b>String :</b> <input type="text" ng-model="string" ng-value="string">
+<button ng-click="addvar()">Add</button> 
+<button ng-click="sort()">Sort</button> 
+<br>{{userMessage}}
+<br>
+<b>Array of string</b> : 
+<span ng-repeat="i in arr track by $index">{{i}} | </span>
+</body>
+</html>
